@@ -4,6 +4,7 @@ from GlobalStates import GlobalStates
 from Slice import SliceCard
 import random
 import string
+from abaqus_sim import run_abaqus_analysis , post_process_results
 from ImageRasterizer import ImageSlicer
 
 class Cell():
@@ -166,6 +167,9 @@ class CellGrid(Canvas):
         for row in self.grid:
             for cell in row:
                 cell.draw()
+    def run_abaqus(self):
+        self.add_runtime_text("Running Abaqus analysis...")
+        run_abaqus_analysis(self.grid, self.numrows, self.numcols)
    
 
         # Get row and column from click event
