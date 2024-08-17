@@ -109,6 +109,9 @@ class CellGrid(Canvas):
         # Add erase button
         self.erase_button = Button(master, text="Erase", command=lambda: [self.add_runtime_text("ERASING"), self.erase()])
         self.erase_button.pack(anchor="nw", padx=10, pady=4)
+
+        self.abaqus_button = Button(master, text="Abaqus", command=self.run_abaqus)
+        self.abaqus_button.pack(anchor="nw", padx=10, pady=4)
             
         # Add slice button
         self.slice_button = Button(master, text="Slice", command=lambda: [self.add_runtime_text("SLICING AND DICING"), SliceCard.slice(SliceCard,self,numrows,numcols)])
