@@ -1,4 +1,4 @@
-import pyabaqus as abq
+import abaqus as abq
 from abaqus import session
 import numpy as np
 import matplotlib.pyplot as plt
